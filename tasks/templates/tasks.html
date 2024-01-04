@@ -1,0 +1,30 @@
+
+{% extends "layouts/base.html" %}
+
+{% block content  %}
+<h1>Task Pending</h1>
+
+
+
+<ul>
+    {%for i in task%}
+    <li>
+    <a href="{% url 'task_detail' i.id %}"> 
+        <h1>{{i.title}}</h1>
+        <p>{{i.description}}</p>
+        <p>{{i.user.username}}</p>
+        <p>{{i.important}}</p>
+        <p>{{i.datecompleted | date:'M j Y:i'}}</p>
+    </a>
+    
+
+    </li>
+
+    {% endfor %}
+
+</ul>
+
+
+
+{% endblock %}
+
